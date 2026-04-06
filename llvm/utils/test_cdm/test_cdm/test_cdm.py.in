@@ -12,7 +12,7 @@ def get_executable_name(name: str) -> str:
   return name + '.exe' if sys.platform == 'win32' else name
 
 def get_venv_executable_path(name: str) -> Path:
-  return Path(sys.executable).parent / get_executable_name(name)
+  return Path(sys.executable).parent / name
 
 if __name__ == "__main__":
   sys.exit(main(Configuration(

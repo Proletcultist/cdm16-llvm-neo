@@ -21,6 +21,6 @@ class Configuration:
   include_paths: list[Path] = field(default_factory=list)
 
   def verify(self) -> None:
-    for path in itertools.chain([self.clang_path, self.cocas_path, self.cocoemu_path, self.resources_path], self.include_paths):
+    for path in itertools.chain([self.clang_path, self.resources_path], self.include_paths):
       if not path.exists():
         raise InvalidConfigurationError(f'File or directory "{str(path)}" doesn\'t exist')

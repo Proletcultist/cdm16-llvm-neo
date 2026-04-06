@@ -1,0 +1,16 @@
+TARG CDM16
+ABS  00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+NAME _cdm_crt0
+DATA 10 20 d1 de 08 fc 10 20 d2 de 05 fc 10 20 d3 de 02 fc 10 20 d4 de 09 20 04 00 08 00 00 00 04 00
+REL  
+NTRY _cdm_default_handler_1 00
+NTRY _cdm_default_handler_2 06
+NTRY _cdm_default_handler_3 0c
+NTRY _cdm_default_handler_4 12
+NTRY _start 1a
+XTRN _start: $abs 00
+XTRN _cdm_default_handler_1: $abs 04
+XTRN _cdm_default_handler_2: $abs 08
+XTRN _cdm_default_handler_3: $abs 0c
+XTRN _cdm_default_handler_4: $abs 10
+XTRN main: _cdm_crt0 1c
