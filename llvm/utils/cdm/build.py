@@ -111,14 +111,6 @@ def main():
 
     run(cmake_cmd, args.verbose)
 
-    build_cmd = [
-        "cmake",
-        "--build", build_dir
-    ]
-
-    log("Building LLVM...", args.verbose)
-    run(build_cmd, args.verbose)
-
     print("\nLLVM build completed successfully.")
     print(f"Build directory: {build_dir}")
     print(f"Build type: {args.build_type}")
