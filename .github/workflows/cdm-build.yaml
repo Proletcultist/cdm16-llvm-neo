@@ -62,6 +62,8 @@ jobs:
         run: |
           STATIC=${{ inputs.static-build && runner.os == 'Linux' && '--static' || '' }}
           ./llvm/utils/cdm/build.py -j 2 -v $STATIC
+      - name: test
+        run: cat ./llvm/build/bin/llvm-lit.py
       - name: Run end-to-end tests
         run: |
           TEST_CDM=${{ runner.os == 'Windows' && 'test_cdm.py' || 'test_cdm' }}
